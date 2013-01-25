@@ -1,0 +1,15 @@
+<p>
+<%= t("user.show_avail_users")%>
+</p>
+<table id="simpletable">
+	<tr>
+		<th align="left"><Id><%= t("user.id")%></th>
+		<th align="left"><Id><%= t("user.user_id")%></th>
+	</tr>
+	<% User.all.each do |user| %>
+	<tr>
+		<td> <%= user.id%> </td>
+		<td> <%= user.user_id%> </td>
+	</tr>
+	<% end %>
+</table>

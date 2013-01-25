@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	background-color: #4169e1;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+}
+
+div.baseFrame {
+	width: 800px;
+	background-color: #FFFFFF;
+	padding: 0 50px;
+	margin: 2em auto 0 auto;
+	border: 2px solid #000000;
+	border-radius: 25px;
+}
+
+input {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+input:focus {
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+
+#flash_error {
+	padding: 5px;
+	color: #FF0000;
+	border: 2px solid #9ecaed;
+	background-color: #dadada;
+	border-radius: 5px;
+}
+
+#flash_alert {
+	padding: 5px;
+	color: #FF0000;
+	border: 2px solid #9ecaed;
+	background-color: #dadada;
+	border-radius: 5px;
+}
+
+#flash_notice {
+	padding: 5px;
+	color: #0033CC;
+	border: 2px solid #9ecaed;
+	background-color: #dadada;
+	border-radius: 5px;
+}

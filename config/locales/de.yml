@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+de:
+  common:
+    skyfall: Skyfall
+  menu:
+    home: Startseite
+    users: Benutzer
+  home:
+    welcome: "Willkommen in der Skyfall Anwendung"
+  user:
+    id: "Id"
+    user_id: "Benutzer"
+    show_avail_users: "Alle verfügbaren Benutzer"

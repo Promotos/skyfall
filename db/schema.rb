@@ -15,6 +15,11 @@ ActiveRecord::Schema.define(:version => 20130120203601) do
 
   create_table "users", :force => true do |t|
     t.string   "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "last_logon"
+    t.string   "last_logon_ip"
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at",    :null => false

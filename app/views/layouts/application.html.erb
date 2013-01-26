@@ -3,46 +3,52 @@
 	<head>
 		<title><%= t("common.skyfall")%></title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= stylesheet_link_tag    "jquery-ui-skyfall", :media => "all" %>
 		<%= javascript_include_tag "application" %>
+		<%= javascript_include_tag "jquery-ui-skyfall" %>
 		<%= csrf_meta_tags %>
 	</head>
 
 	<body>
 		<div class="baseFrame">
-			<h1>Skyfall</h1>
-			<% if current_user %>
-			<hr />
-			<table width="100%">
+			<table width="100%" >
 				<tr>
-					<td>
-					<div id="application_nav" align="left">
-						<%= link_to t("menu.home"), root_path %>,
-						<%= link_to t("menu.users"), users_show_path %>
-					</div></td>
-					<td>
-					<div id="user_nav" align="right">
-
-						<%= link_to "Log out", log_out_path %>
-					</div></td>
+					<td colspan="2"><h1>Skyfall</h1></td>
+				</tr>
+				<tr>
+					<td width="160px" style="vertical-align: top;"> <% if current_user %>
+					<div id="accordion" align="top">
+						<h3>Home</h3>
+						<div>
+							<p>
+								<li><%= link_to t("menu.home"), root_path %></li>
+								<li><%= link_to "Log out", log_out_path %></li>
+							</p>
+						</div>
+						<h3><%= t("menu.users") %></h3>
+						<div>
+							<p>
+								<li><%= link_to "Übersicht", users_show_path %></li>
+								<li><%= link_to "Neuer Benutzer", users_new_path %></li>
+							</p>
+						</div>
+						<% end %>
+					</td>
+					<td > <% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, :id => "flash_#{name}" %>
+					<% end %>
+					<%= yield %> </td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<table width="100%">
+						<tr>
+							<td><% if current_user %>Logged in as <%= current_user.user_id %>.<% end %></td>
+							<td align="right">Version 1.0 | Rendered in <%= sprintf('%.3f', (Time.now.usec - @start_time).abs / 1000000.0) %> seconds</td>
+						</tr>
+					</table></td>
 				</tr>
 			</table>
-			<% end %>
-			
-			<hr />
-			<% flash.each do |name, msg| %>
-			<%= content_tag :div, msg, :id => "flash_#{name}" %>
-			<% end %>
-
-			<%= yield %>
-			<hr />
-			
-			<table width="100%">
-				<tr>
-					<td><% if current_user %>Logged in as <%= current_user.user_id %>.<% end %></td>
-					<td align="right">Version 1.0 | Rendered in <%= sprintf('%.3f', (Time.now.usec - @start_time).abs / 1000000.0) %> seconds</td>
-				</tr>
-			</table>
-
 		</div>
 	</body>
 </html>

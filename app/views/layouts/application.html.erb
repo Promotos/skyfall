@@ -19,25 +19,15 @@
 						<% if current_user %>
 						<h3>Home</h3>
 						<div>
-							<p>
 								<li>
 									<%= link_to t("menu.home"), root_path %>
 								</li>
-								<li>
-									<%= link_to "Log out", log_out_path %>
-								</li>
-							</p>
 						</div>
-						<h3><%= t("menu.users") %></h3>
+						<h3><%= t("menu.settings") %></h3>
 						<div>
-							<p>
 								<li>
-									<%= link_to "Übersicht", users_show_path %>
+									<%= link_to t("menu.user"), users_show_path %>
 								</li>
-								<li>
-									<%= link_to "Neuer Benutzer", users_new_path %>
-								</li>
-							</p>
 						<% end %>
 						</div>
 					</td>
@@ -50,7 +40,7 @@
 					<td colspan="2">
 					<table width="100%">
 						<tr>
-							<td><% if current_user %>Logged in as <%= current_user.user_id %>.<% end %></td>
+							<td><% if current_user %> <%=t("home.logged_in_as")%> <%=current_user.user_id %> | <%= link_to t("home.logout"), log_out_path %><% end %></td>
 							<td align="right">Version 1.0 | Rendered in <%= sprintf('%.3f', (Time.now.usec - @start_time).abs / 1000000.0) %> seconds</td>
 						</tr>
 					</table></td>

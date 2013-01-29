@@ -4,7 +4,7 @@
 <p>
 	<%= t("user.show_avail_users")%>
 </p>
-<table id="simpletable">
+<table id="sky_table">
 	<tr>
 		<th align="left">
 			<%= t("user.id")%>
@@ -37,6 +37,13 @@
 		<td> <%= user.email %> </td>
 		<td> <%= user.last_logon %> </td>
 		<td> <%= user.last_logon_ip %> </td>
+		<td>
+			<%  unless current_user.user_id == user.user_id %> 
+			<%= link_to t("common.delete"), user, confirm: t("common.delete_confirm"), method: :delete %> 
+			<%  else %> 
+			<%= t("user.logged_on") %>
+			<%  end %> 
+			</td>
 	</tr>
 	<% end %>
 </table>

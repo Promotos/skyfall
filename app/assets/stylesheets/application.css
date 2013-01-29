@@ -63,3 +63,19 @@ input:focus {
 	background-color: #D7EBF9;
 	border-radius: 5px;
 }
+
+#sky_table {
+	border: 2px solid #dadada;
+	border-collapse: collapse;
+}
+
+#sky_table th {
+	padding: 5px;
+	border: 1px solid #dadada;
+	background: #dadada
+}
+
+#sky_table td {
+	padding: 5px;
+	border: 1px solid #dadada;
+}

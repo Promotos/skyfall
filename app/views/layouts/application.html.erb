@@ -3,9 +3,7 @@
 	<head>
 		<title><%= t("common.skyfall")%></title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
-		<%= stylesheet_link_tag    "jquery-ui-skyfall", :media => "all" %>
 		<%= javascript_include_tag "application" %>
-		<%= javascript_include_tag "jquery-ui-skyfall" %>
 		<%= csrf_meta_tags %>
 	</head>
 
@@ -16,23 +14,32 @@
 					<td colspan="2"><h1>Skyfall</h1></td>
 				</tr>
 				<tr>
-					<td width="160px" style="vertical-align: top;"> <% if current_user %>
-					<div id="accordion" align="top">
+					<td width="160px" style="vertical-align: top;"> 
+					<div align="top">
+						<% if current_user %>
 						<h3>Home</h3>
 						<div>
 							<p>
-								<li><%= link_to t("menu.home"), root_path %></li>
-								<li><%= link_to "Log out", log_out_path %></li>
+								<li>
+									<%= link_to t("menu.home"), root_path %>
+								</li>
+								<li>
+									<%= link_to "Log out", log_out_path %>
+								</li>
 							</p>
 						</div>
 						<h3><%= t("menu.users") %></h3>
 						<div>
 							<p>
-								<li><%= link_to "Übersicht", users_show_path %></li>
-								<li><%= link_to "Neuer Benutzer", users_new_path %></li>
+								<li>
+									<%= link_to "Übersicht", users_show_path %>
+								</li>
+								<li>
+									<%= link_to "Neuer Benutzer", users_new_path %>
+								</li>
 							</p>
-						</div>
 						<% end %>
+						</div>
 					</td>
 					<td > <% flash.each do |name, msg| %>
 					<%= content_tag :div, msg, :id => "flash_#{name}" %>

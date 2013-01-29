@@ -7,12 +7,25 @@
 <table id="simpletable">
 	<tr>
 		<th align="left">
-		<Id>
 			<%= t("user.id")%>
 		</th>
 		<th align="left">
-		<Id>
 			<%= t("user.user_id")%>
+		</th>
+		<th align="left">
+			<%= t("user.first_name")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_name")%>
+		</th>
+		<th align="left">
+			<%= t("user.email")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_logon")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_logon_ip")%>
 		</th>
 	</tr>
 	<% User.all.each do |user| %>

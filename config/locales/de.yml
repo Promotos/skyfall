@@ -12,4 +12,9 @@ de:
   user:
     id: "Id"
     user_id: "Benutzer"
+    first_name: "Vorname"
+    last_name: "Nachname"
+    email: "E-Mail"
+    last_logon: "Letzte Anmeldung"
+    last_logon_ip: "IP-Adresse"
     show_avail_users: "Alle verfügbaren Benutzer"

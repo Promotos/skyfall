@@ -8,36 +8,36 @@
 	</head>
 
 	<body>
-		<div class="baseFrame">
-			<table width="100%" >
+		<div class="baseFrame" >
+			<table width="100%" cellspacing="0" cellpadding="0">
 				<tr>
-					<td colspan="2"><h1>Skyfall</h1></td>
+					<td><h1>Skyfall</h1></td>
 				</tr>
 				<tr>
-					<td width="160px" style="vertical-align: top;"> 
-					<div align="top">
-						<% if current_user %>
-						<h3>Home</h3>
-						<div>
-								<li>
-									<%= link_to t("menu.home"), root_path %>
-								</li>
-						</div>
-						<h3><%= t("menu.settings") %></h3>
-						<div>
-								<li>
-									<%= link_to t("menu.user"), users_show_path %>
-								</li>
-						<% end %>
-						</div>
+					<td background="/assets/sky-banner.jpg" width="800px" height="169px"></td>
+				</tr>
+				<% if current_user %>
+				<tr>
+					<td style="background: #000000; color: #FFFFFF; height=40px; padding: 10px">
+						<b>
+						<%= link_to t("menu.home"), root_path, :class => 'topNav' %>
+						| <%= link_to t("menu.user"), users_show_path, :class => 'topNav' %>
+						</b>
 					</td>
-					<td > <% flash.each do |name, msg| %>
+				</tr>
+				<% end %>
+				<% unless flash.empty? %>
+				<tr>
+					<td style="padding-top: 10px;"> <% flash.each do |name, msg| %>
 					<%= content_tag :div, msg, :id => "flash_#{name}" %>
 					<% end %>
-					<%= yield %> </td>
+				</tr>
+				<% end %>
+				<tr>
+					<td style="padding-top: 20px; padding-bottom: 40px;"><%= yield %></td>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td>
 					<table width="100%">
 						<tr>
 							<td><% if current_user %> <%=t("home.logged_in_as")%> <%=current_user.user_id %> | <%= link_to t("home.logout"), log_out_path %><% end %></td>

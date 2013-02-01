@@ -1,5 +1,70 @@
 <%= link_to t("common.back"), users_list_path %>
 
-show one user
-<%= params%>
-<%= @user.user_id %>
+<p>
+<table id="sky_table">
+	<tr>
+		<th align="left">
+			Name
+		</th>
+		<th align="left">
+			Wert
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.id")%>
+		</td>
+		<td>
+			<%= @user.id %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.user_id")%>
+		</td>
+		<td>
+			<%= @user.user_id %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.first_name")%>
+		</td>
+		<td>
+			<%= @user.first_name %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.last_name")%>
+		</td>
+		<td>
+			<%= @user.last_name %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.email")%>
+		</td>
+		<td>
+			<%= @user.email %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.last_logon")%>
+		</td>
+		<td>
+			<%= @user.last_logon.to_formatted_s(:long) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= t("user.last_logon_ip")%>
+		</td>
+		<td>
+			<%= @user.last_logon_ip %>
+		</td>
+	</tr>
+</table>
+</p>

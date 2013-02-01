@@ -33,7 +33,7 @@
 		<td> <%= user.first_name %> </td>
 		<td> <%= user.last_name %> </td>
 		<td> <%= user.email %> </td>
-		<td> <%= user.last_logon %> </td>
+		<td> <%= user.last_logon.to_formatted_s(:short) %> </td>
 		<td> <%= user.last_logon_ip %> </td>
 		<td><%= link_to I18n.t('common.edit'), users_edit_path(user) %></td>		
 		<td>

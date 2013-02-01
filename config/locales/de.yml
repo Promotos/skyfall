@@ -5,6 +5,9 @@ de:
   common:
     skyfall: Skyfall
     delete: "Löschen"
+    edit: Bearbeiten
+    show: Anzeigen
+    back: "Zurück"
     delete_confirm: "Bitte löschen bestätigen"
   menu:
     home: Startseite

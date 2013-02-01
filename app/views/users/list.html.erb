@@ -1,0 +1,50 @@
+<%= link_to "Neuer Benutzer", users_new_path %>
+<p>
+	<%= t("user.show_avail_users")%>
+</p>
+<table id="sky_table">
+	<tr>
+		<th align="left">
+			<%= t("user.id")%>
+		</th>
+		<th align="left">
+			<%= t("user.user_id")%>
+		</th>
+		<th align="left">
+			<%= t("user.first_name")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_name")%>
+		</th>
+		<th align="left">
+			<%= t("user.email")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_logon")%>
+		</th>
+		<th align="left">
+			<%= t("user.last_logon_ip")%>
+		</th>
+	</tr>
+	<% User.all.each do |user| %>
+	<tr>
+		<td><%= link_to user.id, users_show_path(:id=>user.id) %></td>		
+		<td> <%= user.user_id %> </td>
+		<td> <%= user.first_name %> </td>
+		<td> <%= user.last_name %> </td>
+		<td> <%= user.email %> </td>
+		<td> <%= user.last_logon %> </td>
+		<td> <%= user.last_logon_ip %> </td>
+		<td><%= link_to I18n.t('common.edit'), users_edit_path(user) %></td>		
+		<td>
+			<%  unless current_user.user_id == user.user_id %> 
+			<%= link_to t("common.delete"), user, confirm: t("common.delete_confirm"), method: :delete %> 
+			<%  else %> 
+			<%= t("user.logged_on") %>
+			<%  end %> 
+		</td>
+		
+	</tr>
+	<% end %>
+
+</table>

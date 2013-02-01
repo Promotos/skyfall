@@ -1,6 +1,10 @@
 Skyfall::Application.routes.draw do
 
+# users
+  get "users/list"
   get "users/show"
+  get "users/new"
+  get "users/edit"
 
   resources :users
   resources :sessions
@@ -9,7 +13,6 @@ Skyfall::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   #get "sessions/new"
-  get "users/new"
   #get "home/show"
 
   root :to => "home#show"

@@ -1,13 +1,14 @@
 Skyfall::Application.routes.draw do
 
+
 # users
   get "users/list"
   get "users/show"
   get "users/new"
   get "users/edit"
+  get "users/change_password"
+  post "users/change_password_do"
 
-  resources :users
-  resources :sessions
 
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
@@ -16,6 +17,10 @@ Skyfall::Application.routes.draw do
   #get "home/show"
 
   root :to => "home#show"
+  
+  # Generated routes with lowest prio
+  resources :sessions
+  resources :users
 
 # The priority is based upon order of creation:
 # first created -> highest priority.

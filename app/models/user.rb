@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
     end
   end
   
+  def change_password(password, repeat)
+    self.password = password
+    self.password_confirmation = repeat
+    save
+  end
+  
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

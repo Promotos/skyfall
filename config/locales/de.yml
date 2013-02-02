@@ -4,27 +4,34 @@
 de:
   common:
     skyfall: Skyfall
-    delete: "Löschen"
+    delete: Löschen
     edit: Bearbeiten
     show: Anzeigen
-    back: "Zurück"
-    delete_confirm: "Bitte löschen bestätigen"
+    back: Zurück
+    delete_confirm: Bitte löschen bestätigen
   menu:
     home: Startseite
     settings: Einstellungen
     user: Benutzer
   home:
-    welcome: "Willkommen in der Skyfall Anwendung"
-    logged_in_as: "Angemeldet als"
-    logout: "Abmelden"
+    welcome: Willkommen in der Skyfall Anwendung
+    logged_in_as: Angemeldet als
+    logout: Abmelden
   user:
-    id: "Id"
-    user_id: "Benutzer"
-    first_name: "Vorname"
-    last_name: "Nachname"
-    email: "E-Mail"
-    last_logon: "Letzte Anmeldung"
-    last_logon_ip: "IP-Adresse"
+    id: Id
+    user_id: Benutzer
+    first_name: Vorname
+    last_name: Nachname
+    email: E-Mail
+    last_logon: Letzte Anmeldung
+    last_logon_ip: IP-Adresse
     show_avail_users: "Alle verfügbaren Benutzer"
-    logged_on: "angemeldet"
+    password: Passwort
+    password_repeat: Passwort wiederholung
+    logged_on: angemeldet
+    change_password: Password ändern
+    change_password_success: Password ändern erfolgreich
+    password_missing: Passwort Eingabe fehlt
+    password_and_repeat_not_equal: Password und Wiederholung sind nicht identisch
+    repeat: Wiederholung
     

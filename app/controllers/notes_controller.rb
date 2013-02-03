@@ -2,7 +2,17 @@ class NotesController < ApplicationController
   def list
   end
 
+  def new
+    @note = Note.new
+  end
+
   def create
+    @note = Note.new(params[:note])
+    if @note.save
+      redirect_to notes_list_path, :notice => "Note created."
+    else
+      render "new"
+    end
   end
 
   def show

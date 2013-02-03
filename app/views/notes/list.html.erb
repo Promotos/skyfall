@@ -1,2 +1,19 @@
-<h1>Notes#list</h1>
-<p>Find me in app/views/notes/list.html.erb</p>
+<%= link_to "New Note", notes_new_path %>
+<p>
+<table id="sky_table">
+	<tr>
+		<th align="left">
+			Id
+		</th>
+		<th align="left">
+			Title
+		</th>
+	</tr>
+	<% Note.all.each do |note| %>
+	<tr>
+		<td><%= link_to note.id, notes_show_path(:id=>note.id) %></td>		
+		<td> <%= note.note_id %> </td>
+	</tr>
+	<% end %>
+</table>
+</p>

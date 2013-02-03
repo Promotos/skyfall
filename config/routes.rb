@@ -4,7 +4,7 @@ Skyfall::Application.routes.draw do
 
   # notes
   get "notes/list"
-  get "notes/create"
+  get "notes/new"
   get "notes/show"
   get "notes/edit"
   get "notes/destroy"
@@ -29,6 +29,7 @@ Skyfall::Application.routes.draw do
   # Generated routes with lowest prio
   resources :sessions
   resources :users
+  resources :notes
 
 # The priority is based upon order of creation:
 # first created -> highest priority.

@@ -23,6 +23,22 @@ a.topNav {
 	color: #FFFFFF;
 }
 
+td.topNav {
+	background: #000000; 
+	color: #FFFFFF; 
+	height=40px; 
+	padding: 10px
+}
+
+td.content {
+	padding-top: 20px; 
+	padding-bottom: 40px;
+}
+
+td.flash {
+	padding-top: 10px;
+}
+
 div.baseFrame {
 	width: 800px;
 	background-color: #FFFFFF;

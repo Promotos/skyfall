@@ -18,7 +18,7 @@
 				</tr>
 				<% if current_user %>
 				<tr>
-					<td style="background: #000000; color: #FFFFFF; height=40px; padding: 10px">
+					<td class="topNav">
 						<b>
 						<%= link_to t("menu.home"), root_path, :class => 'topNav' %>
 						| <%= link_to t("menu.user"), users_list_path, :class => 'topNav' %>
@@ -28,13 +28,13 @@
 				<% end %>
 				<% unless flash.empty? %>
 				<tr>
-					<td style="padding-top: 10px;"> <% flash.each do |name, msg| %>
+					<td class="flash"> <% flash.each do |name, msg| %>
 					<%= content_tag :div, msg, :id => "flash_#{name}" %>
 					<% end %>
 				</tr>
 				<% end %>
 				<tr>
-					<td style="padding-top: 20px; padding-bottom: 40px;"><%= yield %></td>
+					<td class="content"><%= yield %></td>
 				</tr>
 				<tr>
 					<td>

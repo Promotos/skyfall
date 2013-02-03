@@ -35,6 +35,10 @@ td.content {
 	padding-bottom: 40px;
 }
 
+td.footerSmall {
+	font-size: 10px;
+}
+
 td.flash {
 	padding-top: 10px;
 }

@@ -13,11 +13,13 @@ de:
     home: Startseite
     settings: Einstellungen
     user: Benutzer
+    note: Notizen
   home:
     welcome: Willkommen in der Skyfall Anwendung
     logged_in_as: Angemeldet als
     logout: Abmelden
   user:
+    new_user: Neuer Benutzer
     id: Id
     user_id: Benutzer
     first_name: Vorname

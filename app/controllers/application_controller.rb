@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    logger.info "Check for authentication #{session}"
+    #logger.info "Check for authentication #{session}"
     unless("sessions".eql?(controller_name))
       unless logged_in?
-        logger.info "Request requires authentication"
+        #logger.info "Request requires authentication"
         flash[:error] = "You must be logged in to access this section"
         redirect_to log_in_url # halts request cycle
       end

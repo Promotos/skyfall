@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-#one:
-#  user_id: admin
-#  password_hash: "$2a$10$FsN4oHCVhXKV6qlsXe/svuTWqWJLuOhnFz6FVP1woYmstGpIZ4lL."
-#  password_salt: "$2a$10$FsN4oHCVhXKV6qlsXe/svu"
+one:
+  id: 100
+  user_id: admin
+  password_hash: $2a$10$u4DL2fZaP8ve7PYuMMu/y.hE9p6CptZPMiK5kn5sRXS/vk0TsgrNu
+  password_salt: $2a$10$u4DL2fZaP8ve7PYuMMu/y.

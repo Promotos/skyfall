@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    logger.info "Check for authentication"
+    logger.info "Check for authentication #{session}"
     unless("sessions".eql?(controller_name))
       unless logged_in?
         logger.info "Request requires authentication"

@@ -1,3 +1,4 @@
+<%= link_to t("common.show"), users_list_path %>
 <%= link_to t("user.new_user"), users_new_path %>
 <p>
 	<%= t("user.show_avail_users")%>
@@ -33,14 +34,12 @@
 		<td> <%= user.first_name %> </td>
 		<td> <%= user.last_name %> </td>
 		<td> <%= user.email %> </td>
-		<td> <%= user.last_logon.to_formatted_s(:short) %> </td>
+		<td> <%= user.last_logon.to_formatted_s(:short) if user.last_logon %> </td>
 		<td> <%= user.last_logon_ip %> </td>
-		<td><%= link_to I18n.t('common.edit'), users_edit_path(user) %></td>		
+		<td><%= link_to image_tag('/assets/icons/edit.gif'), users_edit_path(user) %></td>		
 		<td>
 			<%  unless current_user.user_id == user.user_id %> 
-			<%= link_to t("common.delete"), user, confirm: t("common.delete_confirm"), method: :delete %> 
-			<%  else %> 
-			<%= t("user.logged_on") %>
+				<%= link_to image_tag('/assets/icons/remove.gif'), user, confirm: t("common.delete_confirm"), method: :delete %> 
 			<%  end %> 
 		</td>
 	</tr>

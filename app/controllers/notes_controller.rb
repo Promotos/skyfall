@@ -17,6 +17,7 @@ class NotesController < ApplicationController
   end
 
   def show
+    load_user_by_id
   end
 
   def edit
@@ -24,4 +25,15 @@ class NotesController < ApplicationController
 
   def destroy
   end
+
+  private 
+  def load_user_by_id
+    if params.has_key?(:id)
+      @note = Note.find(params[:id])
+      redirect_to notes_list_path, :alert => "Note not found." unless @note
+    else
+      redirect_to notes_list_path, :alert => "Parameter :id is missing."
+    end
+  end
+
 end

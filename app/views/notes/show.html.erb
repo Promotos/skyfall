@@ -1,2 +1,8 @@
-<h1>Notes#show</h1>
-<p>Find me in app/views/notes/show.html.erb</p>
+<%= link_to t("common.back"), notes_list_path %>
+<%= link_to t("common.edit"), notes_edit_path %>
+<p>
+	<h2><%= @note.note_id %></h2>
+<p>
+<pre>
+<%= @note.note_text %>
+<pre>

@@ -14,7 +14,7 @@ de:
         settings: Einstellungen
         user: Benutzer
         note: Notizen
-        home:
+    home:
         welcome: Willkommen in der Skyfall Anwendung
         logged_in_as: Angemeldet als
         logout: Abmelden
@@ -37,4 +37,5 @@ de:
         password_and_repeat_not_equal: Password und Wiederholung sind nicht identisch
         repeat: Wiederholung
     note:
+        note: Notiz
         new_note: Neue Notiz

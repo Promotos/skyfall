@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   def list
+    @notes = Note.all
   end
 
   def new

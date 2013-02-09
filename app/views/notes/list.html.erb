@@ -1,4 +1,4 @@
-<%= link_to "New Note", notes_new_path %>
+<%= link_to t("note.new_note"), notes_new_path %>
 <p>
 <table id="sky_table">
 	<tr>
@@ -9,7 +9,7 @@
 			Title
 		</th>
 	</tr>
-	<% Note.all.each do |note| %>
+	<% @notes.each do |note| %>
 	<tr>
 		<td><%= link_to note.id, notes_show_path(:id=>note.id) %></td>		
 		<td> <%= note.note_id %> </td>

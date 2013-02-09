@@ -37,4 +37,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "bcrypt-ruby", :require => "bcrypt" 
+gem "bcrypt-ruby", :require => "bcrypt"
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end

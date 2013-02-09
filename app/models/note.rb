@@ -3,5 +3,4 @@ class Note < ActiveRecord::Base
   
   validates_presence_of :note_id
   validates_uniqueness_of :note_id
-
 end

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :user_id
   validates_uniqueness_of :user_id
+  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  validates_format_of :user_id, :with => /^\w+$/i
   
   def self.authenticate(user_id, password)
     user = find_by_user_id(user_id)

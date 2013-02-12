@@ -36,6 +36,7 @@ de:
         password_missing: Passwort Eingabe fehlt
         password_and_repeat_not_equal: Password und Wiederholung sind nicht identisch
         repeat: Wiederholung
+        user_id_format: Die Benutzer Id muss aus Zeichen und Buchstaben bestehen
     note:
         note: Notiz
         new_note: Neue Notiz

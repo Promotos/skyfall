@@ -17,7 +17,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+    load_user_by_id
+  end
 
+  def update
+    load_user_by_id
+    if @user.update_attributes(params[:user])
+      redirect_to users_list_path, :notice => "User updated"
+    else
+      render "edit"
+    end
   end
 
   def list

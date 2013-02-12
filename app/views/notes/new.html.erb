@@ -1,19 +1,2 @@
 <%= link_to t("common.show"), notes_list_path %>
-<%= form_for @note do |f| %>
-  <% if @note.errors.any? %>
-    <div class="error_messages">
-      <ul>
-        <% for message in @note.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>
-    <%= f.text_field :note_id, :size => 100 %>
-  </p>
-  <p>
-    <%= f.text_area :note_text, :size => "90x20" %>
-  </p>
-  <p class="button"><%= f.submit %></p>
-<% end %>
+<%= render 'form' %>

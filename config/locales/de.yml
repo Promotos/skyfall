@@ -9,6 +9,9 @@ de:
         show: Anzeigen
         back: Zurück
         delete_confirm: Bitte löschen bestätigen
+        entry_created: Eintrag erstellt
+        entry_deleted: Eintrag gelöscht
+        entry_updated: Eintrag aktualisiert
     menu:
         home: Startseite
         settings: Einstellungen

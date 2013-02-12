@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to users_list_path, :notice => "User created."
+      redirect_to users_list_path, :notice => t("common.entry_created")
     else
       render "new"
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def update
     load_user_by_id
     if @user.update_attributes(params[:user])
-      redirect_to users_list_path, :notice => "User updated"
+      redirect_to users_list_path, :notice => t("common.entry_updated")
     else
       render "edit"
     end
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_show_path, :notice => "User deleted."
+    redirect_to users_list_path, :notice => t("common.entry_deleted")
   end
 
   private

@@ -9,6 +9,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
+    @note.user_id = @current_user.id
     if @note.save
       redirect_to notes_list_path, :notice => t("common.entry_created")
     else

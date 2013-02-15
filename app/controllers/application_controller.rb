@@ -22,7 +22,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id] && User.exists?(session[:user_id])
+      @current_user ||= User.find(session[:user_id]) 
+    end
   end
 
   # The logged_in? method simply returns true if the user is logged

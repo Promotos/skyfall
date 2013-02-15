@@ -8,11 +8,15 @@
 		<th align="left">
 			Title
 		</th>
+		<th align="left">
+			Created
+		</th>		
 	</tr>
 	<% @notes.each do |note| %>
 	<tr>
 		<td><%= link_to note.id, notes_show_path(:id=>note.id) %></td>		
 		<td width="100%"> <%= note.note_id %> </td>
+		<td width="100%"> <%= note.user.user_id %> </td>
 		<td><%= link_to image_tag('/assets/icons/edit.gif'), notes_edit_path(:id=>note.id) %></td>		
 		<td>
 			<%= link_to image_tag('/assets/icons/remove.gif'), note, confirm: t("common.delete_confirm"), method: :delete %> 

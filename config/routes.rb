@@ -1,13 +1,12 @@
 Skyfall::Application.routes.draw do
 
-  get "settings/list"
-
   # notes
   get "notes/list"
   get "notes/new"
   get "notes/show"
   get "notes/edit"
   get "notes/destroy"
+  get "notes/as_text", :format => 'text'
 
   # users
   get "users/list"
@@ -16,6 +15,9 @@ Skyfall::Application.routes.draw do
   get "users/edit"
   get "users/change_password"
   post "users/change_password_do"
+
+  #settings
+  get "settings/list"
 
   #session
   get "log_out" => "sessions#destroy", :as => "log_out"

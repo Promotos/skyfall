@@ -1,6 +1,8 @@
 <%= link_to t("common.back"), notes_list_path %>
-<%= link_to t("common.edit"), notes_edit_path %>
+<%= link_to t("common.edit"), notes_edit_path(:id=>@note.id) %>
+<%= link_to "Textfile", notes_as_text_path(:id=>@note.id) %>
 <p>
+	<p>
 	<h2><%= @note.note_id %></h2>
 <p>
 <pre>

@@ -1,4 +1,10 @@
 class NotesController < ApplicationController
+
+  def as_text
+    load_note_by_id
+    render :text => "#{@note.note_id} (#{@note.user.user_id})\n#{@note.note_text}"
+  end
+
   def list
     @notes = Note.all
   end

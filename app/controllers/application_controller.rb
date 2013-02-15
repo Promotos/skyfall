@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     unless("sessions".eql?(controller_name))
       unless logged_in?
         #logger.info "Request requires authentication"
-        flash[:error] = "You must be logged in to access this section"
+        flash[:error] = t("common.must_be_logged_id")
         redirect_to log_in_url # halts request cycle
       end
     end

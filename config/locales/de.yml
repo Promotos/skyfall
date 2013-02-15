@@ -12,6 +12,7 @@ de:
         entry_created: Eintrag erstellt
         entry_deleted: Eintrag gelöscht
         entry_updated: Eintrag aktualisiert
+        must_be_logged_id: Für diesen Bereich ist eine Anmeldung erforderlich
     menu:
         home: Startseite
         settings: Einstellungen
@@ -43,3 +44,6 @@ de:
     note:
         note: Notiz
         new_note: Neue Notiz
+        id: Id
+        title: Titel
+        created: Ersteller

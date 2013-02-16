@@ -18,6 +18,7 @@ de:
         settings: Einstellungen
         user: Benutzer
         note: Notizen
+        household_account: Haushaltsbuch
     home:
         welcome: Willkommen in der Skyfall Anwendung
         logged_in_as: Angemeldet als
@@ -47,3 +48,4 @@ de:
         id: Id
         title: Titel
         created: Ersteller
+

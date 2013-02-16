@@ -1,5 +1,7 @@
 Skyfall::Application.routes.draw do
 
+  get "household_account/list"
+
   # notes
   get "notes/list"
   get "notes/new"

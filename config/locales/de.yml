@@ -4,6 +4,7 @@
 de:
     common:
         skyfall: Skyfall
+        new: Neu
         delete: Löschen
         edit: Bearbeiten
         show: Anzeigen
@@ -48,4 +49,41 @@ de:
         id: Id
         title: Titel
         created: Ersteller
+    household_account:
+        category: Kategorie
+        payment: Zahlungen
+    household_account_payment:
+        category: Kategorie
+        payment_text: Beschreibung
+        sum: Betrag
+        payment_date: Zahltag
+    household_account_category:
+        name:   Name der Kategorie
+        description: Beschreibung
+
+# http://guides.rubyonrails.org/i18n.html
+    activerecord:
+        models:
+            household_account_category: Kategorie
+            household_account_payment: Zahlung
+        errors:
+            models:
+                household_account_category:
+                    attributes:
+                        category_id:
+                            blank: Kategorie darf nicht leer sein
+                        user_id:
+                            blank: Benutzer darf nicht leer sein
+                household_account_payment:
+                    attributes:
+                        household_account_category_id:
+                            blank: Kategorie darf nicht leer sein
+                        payment_text:
+                            blank: Zahlungstext darf nicht leer sein
+                        sum:
+                            blank: Summe darf nicht leer sein
+    helpers:
+        submit:
+            create: "%{model} erstellen"
+            update: "%{model} aktualisieren"
 

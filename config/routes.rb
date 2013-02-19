@@ -1,6 +1,17 @@
 Skyfall::Application.routes.draw do
 
+
+  # household
+  get "household_account_categories/list"
+  get "household_account_categories/edit"
+  get "household_account_categories/new"
+  get "household_account_categories/show"
+  get "household_account_payments/list"
+  get "household_account_payments/new"
+  get "household_account_payments/edit"
+  get "household_account_payments/show"
   get "household_account/list"
+
 
   # notes
   get "notes/list"
@@ -34,6 +45,8 @@ Skyfall::Application.routes.draw do
   resources :sessions
   resources :users
   resources :notes
+  resources :household_account_categories
+  resources :household_account_payments
 
 # The priority is based upon order of creation:
 # first created -> highest priority.

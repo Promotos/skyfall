@@ -34,5 +34,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :notes
+  has_many :household_account_categories
+  has_many :household_account_payments
 end
 

@@ -1,0 +1,2 @@
+module HouseholdAccountHelper
+end

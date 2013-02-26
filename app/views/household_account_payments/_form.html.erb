@@ -1,0 +1,30 @@
+<%= form_for @household_account_payment do |f| %>
+  <% if @household_account_payment.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% for message in @household_account_payment.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table>
+    <tr>
+        <td><%= f.label :household_account_category_id, t("household_account_payment.category") %></td>
+        <td><%=collection_select(:household_account_payment, :household_account_category_id, HouseholdAccountCategory.all, :id, :category_id)%></td>
+    </tr>
+    <tr>
+        <td><%= f.label :payment_text, t("household_account_payment.payment_text") %></td>
+        <td><%= f.text_field :payment_text, :size => 100 %></td>
+    </tr> 
+    <tr>
+        <td><%= f.label :sum, t("household_account_payment.sum") %></td>
+        <td><%= f.number_field :sum %></td>
+    </tr>  
+    <tr>
+        <td><%= f.label :payment_date, t("household_account_payment.payment_date") %></td>
+        <td><%= date_select :household_account_payment, :payment_date %></td>
+    </tr>      
+  </table>
+  <p class="button"><%= f.submit %></p>
+<% end %>

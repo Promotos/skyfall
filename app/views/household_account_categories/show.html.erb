@@ -1,0 +1,9 @@
+<%= link_to t("common.back"), household_account_categories_list_path %>
+<%= link_to t("common.edit"), household_account_categories_edit_path(:id=>@household_account_category.id) %>
+<p>
+	<p>
+	<h2><%= @household_account_category.category_id %></h2>
+<p>
+<pre>
+<%= @household_account_category.category_text %>
+<pre>

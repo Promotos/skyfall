@@ -1,0 +1,30 @@
+<%= link_to t("common.back"), household_account_list_path %>
+<%= link_to t("common.new"), household_account_categories_new_path %>
+<p>
+<table id="sky_table">
+	<tr>
+		<th align="left">
+			Id
+		</th>
+		<th align="left">
+			Text
+		</th>
+		<th align="left">
+			Beschreibung
+		</th>		
+		<th align="left">
+			Erstellt
+		</th>				
+	</tr>
+	<% @household_account_categories.each do |category| %>
+	<tr>
+		<td><%= link_to category.id, household_account_categories_show_path(:id=>category.id) %></td>		
+		<td > <%= category.category_id %> </td>
+		<td width="100%"> <%= category.category_text %> </td>
+		<td > <%= category.user.user_id %> </td>
+		<td><%= link_to image_tag('/assets/icons/edit.gif'), household_account_categories_edit_path(:id=>category.id) %></td>		
+		<td><%= link_to image_tag('/assets/icons/remove.gif'), category, confirm: t("common.delete_confirm"), method: :delete %> </td>				
+	</tr>
+	<% end %>
+</table>
+</p>

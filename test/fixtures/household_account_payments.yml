@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  household_account_category_id: 1
+  payment_text: MyString
+  sum: 9.99
+
+two:
+  user_id: 1
+  household_account_category_id: 1
+  payment_text: MyString
+  sum: 9.99

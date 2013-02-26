@@ -1,0 +1,2 @@
+module HouseholdAccountPaymentsHelper
+end

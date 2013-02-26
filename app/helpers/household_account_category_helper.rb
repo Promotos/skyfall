@@ -1,0 +1,2 @@
+module HouseholdAccountCategoryHelper
+end

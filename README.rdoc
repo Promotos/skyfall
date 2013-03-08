@@ -3,3 +3,14 @@ Hints
 
 rake db:seed RAILS_ENV="production"
 rake db:migrate RAILS_ENV="production"
+
+source /usr/local/rvm/scripts/rvm
+rake db:reset RAILS_ENV="production"
+ruby script/secure_rails s -e production
+
+rake assets:precompile --trace RAILS_ENV=production
+
+ ps aux | grep ruby
+ kill -INT 4033
+
+

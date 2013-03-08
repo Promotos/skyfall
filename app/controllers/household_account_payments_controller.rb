@@ -1,6 +1,14 @@
 class HouseholdAccountPaymentsController < ApplicationController
   def list
-  	@household_account_payments = HouseholdAccountPayment.order(:payment_date).reverse_order.all
+    if params.has_key?(:month)
+      month = Date.parse(params[:month])
+      @selection_from = month.beginning_of_month
+      @selection_to = month.end_of_month
+    else
+      @selection_from = Date.today.beginning_of_month
+      @selection_to = Date.today.end_of_month
+    end
+  	@household_account_payments = HouseholdAccountPayment.where('payment_date BETWEEN ? AND ?', @selection_from, @selection_to)
   end
 
   def new

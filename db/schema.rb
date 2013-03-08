@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216153248) do
+ActiveRecord::Schema.define(:version => 20130308185510) do
 
   create_table "household_account_categories", :force => true do |t|
     t.string   "category_id"
@@ -24,11 +24,20 @@ ActiveRecord::Schema.define(:version => 20130216153248) do
   create_table "household_account_payments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "household_account_category_id"
+    t.integer  "household_account_shop_id"
     t.string   "payment_text"
     t.decimal  "sum",                           :precision => 7, :scale => 2
     t.date     "payment_date"
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
+  end
+
+  create_table "household_account_shops", :force => true do |t|
+    t.string   "shop_id"
+    t.string   "shop_text"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notes", :force => true do |t|

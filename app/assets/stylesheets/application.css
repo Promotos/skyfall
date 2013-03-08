@@ -57,14 +57,7 @@ div.panel {
 	border-radius: 5px
 }
 
-input {
-	border: 2px solid #dadada;
-	border-radius: 7px;
-	font-size: 14px;
-	padding: 5px;
-}
-
-textarea {
+input, select, textarea {
 	border: 2px solid #dadada;
 	border-radius: 7px;
 	font-size: 14px;

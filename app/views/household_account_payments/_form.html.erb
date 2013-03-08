@@ -11,8 +11,13 @@
   <table>
     <tr>
         <td><%= f.label :household_account_category_id, t("household_account_payment.category") %></td>
-        <td><%=collection_select(:household_account_payment, :household_account_category_id, HouseholdAccountCategory.all, :id, :category_id)%></td>
+        <td>
+          <%=collection_select(:household_account_payment, :household_account_category_id, HouseholdAccountCategory.all, :id, :category_id, {:prompt=>true}, {:style=>'width:200px'})%></td>
     </tr>
+    <tr>
+        <td><%= f.label :household_account_shop_id, t("household_account_payment.shop") %></td>
+        <td><%=collection_select(:household_account_payment, :household_account_shop_id, HouseholdAccountShop.all, :id, :shop_id, {:prompt=>true}, {:style=>'width:200px'})%></td>
+    </tr>    
     <tr>
         <td><%= f.label :payment_text, t("household_account_payment.payment_text") %></td>
         <td><%= f.text_field :payment_text, :size => 100 %></td>

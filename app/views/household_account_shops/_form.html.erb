@@ -1,0 +1,20 @@
+<%= form_for @household_account_shop do |f| %>
+  <% if @household_account_shop.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% for message in @household_account_shop.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :shop_id, t("household_account_shop.name") %>
+    <%= f.text_field :shop_id, :size => 100 %>
+  </p>
+  <p>
+    <%= f.label :shop_text, t("household_account_shop.description") %>
+    <%= f.text_area :shop_text, :size => "90x20" %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>

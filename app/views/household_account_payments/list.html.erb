@@ -13,6 +13,9 @@
 			Kategorie
 		</th>
 		<th align="left">
+			Geschäft
+		</th>			
+		<th align="left">
 			Summe
 		</th>		
 		<th align="left">
@@ -27,6 +30,7 @@
 		<td><%= link_to payment.id, household_account_payments_show_path(:id=>payment.id) %></td>		
 		<td width="100%"> <%= payment.payment_text %> </td>
 		<td > <%= payment.household_account_category.category_id %> </td>
+		<td > <%= payment.household_account_shop.shop_id %> </td>
 		<td > <%= payment.sum %> </td>
 		<td > <%= payment.payment_date.strftime("%d.%b.%y") %> </td>
 		<td > <%= payment.user.user_id %> </td>

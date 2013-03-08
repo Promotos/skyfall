@@ -10,6 +10,10 @@ Skyfall::Application.routes.draw do
   get "household_account_payments/new"
   get "household_account_payments/edit"
   get "household_account_payments/show"
+  get "household_account_shops/edit"
+  get "household_account_shops/list"
+  get "household_account_shops/new"
+  get "household_account_shops/show"  
   get "household_account/list"
 
 
@@ -46,6 +50,7 @@ Skyfall::Application.routes.draw do
   resources :users
   resources :notes
   resources :household_account_categories
+  resources :household_account_shops  
   resources :household_account_payments
 
 # The priority is based upon order of creation:

@@ -18,3 +18,8 @@ HouseholdAccountCategory.create(category_id: 'Hobby', category_text: 'Jeder soll
 HouseholdAccountCategory.create(category_id: 'Drogerie', category_text: 'Dinge die jeder haben sollte', user_id: admin.id )
 HouseholdAccountCategory.create(category_id: 'Haushalt', category_text: 'tbd', user_id: admin.id )
 HouseholdAccountCategory.create(category_id: 'Garten', category_text: 'Grünzeugs', user_id: admin.id )
+
+HouseholdAccountShop.create(shop_id: 'Aktiv Markt', shop_text: '', user_id: admin.id )
+HouseholdAccountShop.create(shop_id: 'Netto', shop_text: '', user_id: admin.id )
+HouseholdAccountShop.create(shop_id: 'Aldi', shop_text: '', user_id: admin.id )
+HouseholdAccountShop.create(shop_id: 'Müller', shop_text: '', user_id: admin.id )

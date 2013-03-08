@@ -51,20 +51,26 @@ de:
         created: Ersteller
     household_account:
         category: Kategorie
+        shop: Geschäfte
         payment: Zahlungen
     household_account_payment:
         category: Kategorie
+        shop: Geschäft
         payment_text: Beschreibung
-        sum: Betrag
+        sum: Bruttobetrag
         payment_date: Zahltag
     household_account_category:
         name:   Name der Kategorie
         description: Beschreibung
+    household_account_shop:
+        name:   Name des Geschäfts
+        description: Beschreibung        
 
 # http://guides.rubyonrails.org/i18n.html
     activerecord:
         models:
             household_account_category: Kategorie
+            household_account_shop: Geschäft
             household_account_payment: Zahlung
         errors:
             models:
@@ -74,6 +80,12 @@ de:
                             blank: Kategorie darf nicht leer sein
                         user_id:
                             blank: Benutzer darf nicht leer sein
+                household_account_shop:
+                    attributes:
+                        shop_id:
+                            blank: Name darf nicht leer sein
+                        user_id:
+                            blank: Benutzer darf nicht leer sein                            
                 household_account_payment:
                     attributes:
                         household_account_category_id:

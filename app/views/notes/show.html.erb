@@ -1,5 +1,5 @@
-<%= link_to t("common.back"), notes_list_path %>
-<%= link_to t("common.edit"), notes_edit_path(:id=>@note.id) %>
+<%= link_to image_tag('/assets/icons/back.png', :title => t("common.back")), notes_list_path %>
+<%= link_to image_tag('/assets/icons/edit.png', :title => t("common.edit")), notes_edit_path(:id=>@note.id) %>
 <%= link_to "Textfile", notes_as_text_path(:id=>@note.id) %>
 <p>
 	<p>

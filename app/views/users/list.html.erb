@@ -36,10 +36,10 @@
 		<td> <%= user.email %> </td>
 		<td> <%= user.last_logon.to_formatted_s(:short) if user.last_logon %> </td>
 		<td> <%= user.last_logon_ip %> </td>
-		<td><%= link_to image_tag('/assets/icons/edit.gif'), users_edit_path(:id=>user.id) %></td>		
+		<td><%= link_to image_tag('/assets/icons/edit_table.gif'), users_edit_path(:id=>user.id) %></td>		
 		<td>
 			<%  unless current_user.user_id == user.user_id %> 
-				<%= link_to image_tag('/assets/icons/remove.gif'), user, confirm: t("common.delete_confirm"), method: :delete %> 
+				<%= link_to image_tag('/assets/icons/remove_table.gif'), user, confirm: t("common.delete_confirm"), method: :delete %> 
 			<%  end %> 
 		</td>
 	</tr>

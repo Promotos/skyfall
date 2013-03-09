@@ -1,5 +1,5 @@
-<%= link_to t("common.back"), household_account_list_path %>
-<%= link_to t("common.new"), household_account_payments_new_path %>
+<%= link_to image_tag('/assets/icons/back.png', :title => t("common.back")), household_account_list_path %>
+<%= link_to image_tag('/assets/icons/new.png', :title => t("common.new")), household_account_payments_new_path %>
 <p>
 	Von: <%= @selection_from.strftime("%d.%b.%y") %>
 <p>	
@@ -38,8 +38,8 @@
 		<td > <%= payment.sum %> </td>
 		<td > <%= payment.payment_date.strftime("%d.%b.%y") %> </td>
 		<td > <%= payment.user.user_id %> </td>
-		<td><%= link_to image_tag('/assets/icons/edit.gif'), household_account_payments_edit_path(:id=>payment.id) %></td>		
-		<td><%= link_to image_tag('/assets/icons/remove.gif'), payment, confirm: t("common.delete_confirm"), method: :delete %> </td>				
+		<td><%= link_to image_tag('/assets/icons/edit_table.gif'), household_account_payments_edit_path(:id=>payment.id) %></td>		
+		<td><%= link_to image_tag('/assets/icons/remove_table.gif'), payment, confirm: t("common.delete_confirm"), method: :delete %> </td>				
 	</tr>
 	<% end %>
 </table>

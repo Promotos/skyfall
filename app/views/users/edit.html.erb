@@ -1,4 +1,5 @@
 <%= link_to t("common.show"), users_list_path %>
+<%= link_to t("user.change_password"), users_change_password_path(:id=>@user.id) %>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">

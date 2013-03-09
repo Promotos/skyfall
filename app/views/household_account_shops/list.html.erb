@@ -1,5 +1,5 @@
-<%= link_to t("common.back"), household_account_list_path %>
-<%= link_to t("common.new"), household_account_shops_new_path %>
+<%= link_to image_tag('/assets/icons/back.png', :title => t("common.back")), household_account_list_path %>
+<%= link_to image_tag('/assets/icons/new.png', :title => t("common.new")) , household_account_shops_new_path %>
 <p>
 <table id="sky_table">
 	<tr>
@@ -22,8 +22,8 @@
 		<td width="20%"> <%= shop.shop_id %> </td>
 		<td width="80%"> <%= shop.shop_text %> </td>
 		<td > <%= shop.user.user_id %> </td>
-		<td><%= link_to image_tag('/assets/icons/edit.gif'), household_account_shops_edit_path(:id=>shop.id) %></td>		
-		<td><%= link_to image_tag('/assets/icons/remove.gif'), shop, confirm: t("common.delete_confirm"), method: :delete %> </td>				
+		<td><%= link_to image_tag('/assets/icons/edit_table.gif'), household_account_shops_edit_path(:id=>shop.id) %></td>		
+		<td><%= link_to image_tag('/assets/icons/remove_table.gif'), shop, confirm: t("common.delete_confirm"), method: :delete %> </td>				
 	</tr>
 	<% end %>
 </table>

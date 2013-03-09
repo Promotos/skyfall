@@ -3,9 +3,10 @@
 <%= link_to t("household_account.payment"), household_account_payments_list_path %>
 
 <p>
+<center>
 <table id="sky_table">
 	<tr>
-		<th align="left">Category</th>
+		<th align="left" width="200px"><%= t("household_account.category") %></th>
 		<% @household_account_summary.get_month_history.each do |date| %>	
 			<th align="left"><%= link_to date.strftime("%b %y"), household_account_payments_list_path(:month=>date) %></th>
 		<% end %>
@@ -35,4 +36,42 @@
 		<% end %>	
 	</tr>
 </table>
+</center>
 </p>
+<p>
+<div id="payment_chart" style="width: 800px; height: 500px;"></div>
+</p>
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  new Highcharts.Chart({
+    chart: { renderTo: 'payment_chart' },
+    title: { text: 'Übersicht' },
+    xAxis: { 
+    	title: { text: 'Monat'},
+    	categories: [
+    	<% @household_account_summary.get_month_history.each do |date| %>
+    	'<%= date.strftime("%b %y")%>',
+    	<% end %>
+                ]
+     },
+    yAxis: {
+      title: { text: 'Euro'}
+    },
+    series: [
+    <% @household_account_summary.get_categories.each do |category| %>
+    {
+    	name: "<%= category.category_id %>",
+    	data: [
+		<% @household_account_summary.get_month_history.each do |date| %>
+		{
+			name: '<%= date.strftime("%b %y")%>',
+			y: <%= @household_account_summary.get_summary_for_chart(date, category) %>
+		},
+		<% end %>
+		]
+    }, <% end %>
+    ]
+  });
+});
+</script>
+

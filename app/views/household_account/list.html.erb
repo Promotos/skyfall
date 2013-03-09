@@ -18,7 +18,8 @@
 		</td>
 		<% @household_account_summary.get_month_history.each do |date| %>	
 		<td>
-			<%= @household_account_summary.get_summary(date, category) %>
+			<%= link_to @household_account_summary.get_summary(date, category), 
+			household_account_payments_list_path(:month=>date, :category_id=>category.id) %>
 		</td>
 		<% end %>
 	</tr>

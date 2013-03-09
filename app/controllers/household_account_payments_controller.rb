@@ -8,7 +8,12 @@ class HouseholdAccountPaymentsController < ApplicationController
       @selection_from = Date.today.beginning_of_month
       @selection_to = Date.today.end_of_month
     end
-  	@household_account_payments = HouseholdAccountPayment.where('payment_date BETWEEN ? AND ?', @selection_from, @selection_to)
+    if params.has_key?(:category_id)
+      @household_account_payments = HouseholdAccountPayment.where('household_account_category_id = ? AND payment_date BETWEEN ? AND ?', 
+        params[:category_id], @selection_from, @selection_to)
+    else
+      @household_account_payments = HouseholdAccountPayment.where('payment_date BETWEEN ? AND ?', @selection_from, @selection_to)
+    end
   end
 
   def new

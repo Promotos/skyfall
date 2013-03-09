@@ -9,10 +9,12 @@
     </div>
   <% end %>
   <p>
-    <%= f.text_field :note_id, :size => 100 %>
+    <%= f.text_field :note_id, :size => "100%" %>
   </p>
   <p>
     <%= f.text_area :note_text, :size => "90x20" %>
   </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
+
+<script type="application/javascript">document.getElementById('note_note_id').focus();</script>
